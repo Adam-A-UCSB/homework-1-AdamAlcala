@@ -19,6 +19,78 @@ When you click the **Knit** button a document will be generated that includes bo
 
 ### Adam Alcala
 
-### 10-01-2022
+#### 10-01-2022
 
+\*Question prompts taken from homework-1.html
 
+#### Question 1
+
+#### Define supervised and unsupervised learning. What are the difference(s) between them?
+
+Supervised and Unsupervised learning are the two ways of how machines learn through models. Supervised learning means that the response variable, Y, is known, or 'supervised'. We can directly see what the machine model predicted and compare it to the known response variable. This lets us see how effective the model is at predicting the response variable with the predictor variables. Unlike supervised learning, unsupervised learning does not have any response variable known. Since the response is unknown, what is shown from an unsupervised model is what was shown from the predictors.
+
+#### Question 2:
+
+#### Explain the difference between a regression model and a classification model, specifically in the context of machine learning.
+
+For Machine learning, the difference between a regression and classification model is concerned with the characteristic of the response variable. If the response is quantitative, it is a regression model. If it is qualitative, it is a classification model.
+
+#### Question 3:
+
+#### Name two commonly used metrics for regression ML problems. Name two commonly used metrics for classification ML problems.
+
+Two commonly used metrics for regression: Age and Height
+
+Two commonly used metrics for classification: Quality and Medical Conditions
+
+#### Question 4:
+
+#### As discussed, statistical models can be used for different purposes. These purposes can generally be classified into the following three categories. Provide a brief description of each.
+
+Descriptive models: These models are concerned with visually representing relationships or trends in data.
+
+Inferential models: This model wants to test questions asked about the data and the outcome. It wants to test any theories involving the data and find out what is significant.
+
+Predictive models: For this model, the main goal is to 'predict' the response with the least amount of reducible error. It wants to find the combination of features that reduce the most amount of error.
+
+#### Question 5:
+
+#### Predictive models are frequently used in machine learning, and they can usually be described as either mechanistic or empirically-driven. Answer the following questions.
+
+##### Define mechanistic. Define empirically-driven. How do these model types differ? How are they similar?
+
+Mechanistic models assume that the function is in a parametric form. That means that the function is defined by various constants (for example, $\beta_0 + \beta_1 + ...$). For an empirically-driven model, there is no assumption of a parametric form. Empirically-driven models also require a much larger number of observations. Between the two models, an empirically- driven model is much more flexible to start, but mechanistic models can become more flexible with the addition of more parameters. In a similar manner, both models can become too flexible and cause over-fitting.
+
+##### In general, is a mechanistic or empirically-driven model easier to understand? Explain your choice.
+
+A mechanistic model is simpler to understand. Assuming the model function to be parametric clearly defines what the model is taking in and how those may affect the model's outcome.
+
+##### Describe how the bias-variance trade off is related to the use of mechanistic or empirically-driven models.
+
+As a model gets more flexible, it gains less bias and more variance. In the context of mechanistic or empirically-driven models, the former is initially more biased with less variance, but the latter is less biased with more variance.
+
+#### Question 4:
+
+#### Classify each question as either predictive or inferential. Explain your reasoning for each.
+
+#### A political candidate's campaign has collected some detailed voter history data from their constituents. The campaign is interested in two questions:
+
+##### Given a voter's profile/data, how likely is it that they will vote in favor of the candidate?
+
+Predictive, this question wants to find out how likely a voter will choose a certain candidate. It would be most beneficial to answer this question with trying to have the least amount of error in predicting the choice of a voter.
+
+##### How would a voter's likelihood of support for the candidate change if they had personal contact with the candidate?
+
+Inferential, this question is concerned with testing a theory about the voters. Seeing if a voter's support for a candidate will change with personal contact is the main theory that want to be tested with this question. It will test if there is a significant relationship between the predictor and the outcome.
+
+## Exploratory Data Analysis
+
+```{r}
+library(tidyverse)
+library(ggplot2)
+```
+### Exercise 1 
+
+```{r}
+mpg <- 
+```
