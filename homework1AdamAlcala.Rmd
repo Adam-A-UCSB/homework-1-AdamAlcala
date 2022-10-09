@@ -150,11 +150,11 @@ As for cyl and displ, it makes sense that more cylinders in a car engine generat
 
 When it comes to negative relationships, There are these combinations:
 
-'hwy and cyl'  - More cylinders means less miles per gallon of gas used
-'hwy and disp' - More engine displacement means less miles per gallon of gas used
+'hwy and cyl'  - More cylinders means less miles per gallon of gas used.
+'hwy and disp' - More engine displacement means less miles per gallon of gas used.
 'year and cty' - Very small negative correlation, not sure about reason, maybe there are more cars in future years, so there is more time spent in the city?
-'cyl and cty' - More cylinders using gas means less miles being used per gallon
-'cty and displ' - More engine displacement means less city miles per gallon
+'cyl and cty' - More cylinders using gas means less miles being used per gallon.
+'cty and displ' - More engine displacement means less city miles per gallon.
 
 One relationship that surprises me is the relationship between city miles per gallon and the year of manufacture. There is very little difference in the city miles per gallon used, and I cannot think of a distinct reason as to why.
 
