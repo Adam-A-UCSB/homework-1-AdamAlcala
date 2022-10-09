@@ -88,9 +88,74 @@ Inferential, this question is concerned with testing a theory about the voters. 
 ```{r}
 library(tidyverse)
 library(ggplot2)
+mpg
 ```
-### Exercise 1 
-
+### Exercise 1:
+Histogram of the 'hwy' variable
 ```{r}
-mpg <- 
+mpg_hwy <- mpg %>% select(hwy)
+hist <- ggplot(data = mpg_hwy) + geom_histogram(mapping = aes(x=hwy))
+hist
 ```
+I notice that the majority of the observations are between 15 and 30. There are also two peaks in the observations, one at ~16 and another at ~26. 
+
+### Exercise 2:
+Scatter plot of hwy and cty variables
+```{r}
+mpg_scatter <-mpg %>% select(hwy,cty)
+splot <- ggplot(data = mpg_scatter) + geom_point(mapping = aes(x=hwy, y = cty))
+splot
+```
+From the scatter plot, there is a direct positive relationship between the hwy and cty variables. As hwy increases, so does cty.
+
+### Exercise 3:
+Bar plot of manufacturer variable.
+```{r}
+mpg_bar <- mpg %>% select(manufacturer)
+bplot <- ggplot(data=mpg_bar, aes(y=reorder(factor(manufacturer),manufacturer,function(y)-length(y)))) + geom_bar()
+bplot
+```
+The manufacturer that produced the most cars was Dodge, and the one that produced the least was Lincoln.
+
+### Exercise 4:
+Box Plot of Hwy grouped by cyl
+```{r}
+mpg_box <- mpg %>% select(hwy,cyl)
+mpg_box$cyl = as.character(mpg_box$cyl)
+bxplot <-ggplot(mpg_box,aes(x= cyl,y = hwy)) + geom_boxplot()
+bxplot
+```
+I notice that as the number of cylinders on a car increases, the highway miles per gallon begin to decrease.
+
+### Exercise 5:
+Use corrplot to make a lower triangle correlation matrix of the mpg data set
+```{r}
+library(corrplot)
+mpg_numbers <- mpg %>% select(hwy,year,cyl,cty,displ)
+cplot <- cor(mpg_numbers)
+corrplot(cplot, method = 'number',type = 'lower')
+```
+In order to correlate variables in the data set, only numerical variables have been chosen. These are the positive relationships:  
+'hwy and cty'
+'year with cyl'
+'year with displ' 
+'cyl with displ'
+
+For hwy and cty, both have to do with miles per gallon, so a car that would be better at having more miles per gallon would be effective in both the city and highway.
+
+With year with cyl and displ, it makes sense that newer models will improve and find ways to increase both the amount of cylinders a vehicle model has as well as more potential power with engine displacement.
+
+As for cyl and displ, it makes sense that more cylinders in a car engine generating more power would create more engine displacement.
+
+
+When it comes to negative relationships, There are these combinations:
+
+'hwy and cyl'  - More cylinders means less miles per gallon of gas used
+'hwy and disp' - More engine displacement means less miles per gallon of gas used
+'year and cty' - Very small negative correlation, not sure about reason, maybe there are more cars in future years, so there is more time spent in the city?
+'cyl and cty' - More cylinders using gas means less miles being used per gallon
+'cty and displ' - More engine displacement means less city miles per gallon
+
+One relationship that surprises me is the relationship between city miles per gallon and the year of manufacture. There is very little difference in the city miles per gallon used, and I cannot think of a distinct reason as to why.
+
+
